@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PasswordGenerator
 {
-    public partial class Form1 : Form
+    public partial class passwordLengthSlider : Form
     {
-        public Form1()
+        public passwordLengthSlider()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace PasswordGenerator
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CopyPasswordButton_Click(object sender, EventArgs e)
         {
 
         }
