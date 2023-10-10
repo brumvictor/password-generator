@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PasswordGenerator
 {
-    public partial class passwordLengthSlider : Form
+    public partial class FormPasswordGenerator : Form
     {
-        public passwordLengthSlider()
+        int currentPasswordLength = 0;
+        Random character = new Random();
+
+        public FormPasswordGenerator()
         {
             InitializeComponent();
+            PasswordLengthSlider.Minimum = 5;
+            PasswordLengthSlider.Maximum = 20;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -28,6 +33,17 @@ namespace PasswordGenerator
         }
 
         private void CopyPasswordButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(passwordLabel.Text);
+        }
+
+        private void TrackBar1_Scroll(object sender, EventArgs e)
+        {
+            PasswordLengthLabel.Text = "Password Length: " + PasswordLengthSlider.Value.ToString();
+            currentPasswordLength = PasswordLengthSlider.Value;
+        }
+
+        private void PasswordLengthLabel_Click(object sender, EventArgs e)
         {
 
         }

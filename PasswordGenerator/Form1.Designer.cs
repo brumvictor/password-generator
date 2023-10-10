@@ -1,7 +1,7 @@
 ﻿
 namespace PasswordGenerator
 {
-    partial class passwordLengthSlider
+    partial class FormPasswordGenerator
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,13 @@ namespace PasswordGenerator
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(passwordLengthSlider));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPasswordGenerator));
             this.passwordLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.PasswordLengthLabel = new System.Windows.Forms.Label();
+            this.PasswordLengthSlider = new System.Windows.Forms.TrackBar();
             this.CopyPasswordButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordLengthSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,22 +50,24 @@ namespace PasswordGenerator
             this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.passwordLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label1
+            // PasswordLengthLabel
             // 
-            this.label1.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(147, 216);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(389, 53);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Password Length: 5 ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PasswordLengthLabel.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordLengthLabel.Location = new System.Drawing.Point(147, 216);
+            this.PasswordLengthLabel.Name = "PasswordLengthLabel";
+            this.PasswordLengthLabel.Size = new System.Drawing.Size(389, 53);
+            this.PasswordLengthLabel.TabIndex = 1;
+            this.PasswordLengthLabel.Text = "Password Length: 5 ";
+            this.PasswordLengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PasswordLengthLabel.Click += new System.EventHandler(this.PasswordLengthLabel_Click);
             // 
-            // trackBar1
+            // PasswordLengthSlider
             // 
-            this.trackBar1.Location = new System.Drawing.Point(135, 284);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(401, 45);
-            this.trackBar1.TabIndex = 2;
+            this.PasswordLengthSlider.Location = new System.Drawing.Point(135, 284);
+            this.PasswordLengthSlider.Name = "PasswordLengthSlider";
+            this.PasswordLengthSlider.Size = new System.Drawing.Size(401, 45);
+            this.PasswordLengthSlider.TabIndex = 2;
+            this.PasswordLengthSlider.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
             // 
             // CopyPasswordButton
             // 
@@ -89,7 +91,7 @@ namespace PasswordGenerator
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // passwordLengthSlider
+            // FormPasswordGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,14 +99,14 @@ namespace PasswordGenerator
             this.ClientSize = new System.Drawing.Size(685, 487);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CopyPasswordButton);
-            this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PasswordLengthSlider);
+            this.Controls.Add(this.PasswordLengthLabel);
             this.Controls.Add(this.passwordLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "passwordLengthSlider";
+            this.Name = "FormPasswordGenerator";
             this.Text = "Password Generator";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordLengthSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -114,8 +116,8 @@ namespace PasswordGenerator
         #endregion
 
         private System.Windows.Forms.Label passwordLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label PasswordLengthLabel;
+        private System.Windows.Forms.TrackBar PasswordLengthSlider;
         private System.Windows.Forms.Button CopyPasswordButton;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

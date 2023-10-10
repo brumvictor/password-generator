@@ -16,7 +16,7 @@ namespace PasswordGenerator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new passwordLengthSlider());
+            Application.Run(new FormPasswordGenerator());
         }
     }
 }
