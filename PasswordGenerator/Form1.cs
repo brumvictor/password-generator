@@ -15,11 +15,25 @@ namespace PasswordGenerator
         int currentPasswordLength = 0;
         Random character = new Random();
 
+        private void PassordGenerator(int passwordLength)
+        {
+            String allCharacters = "ABCDEFGHIJKLMNOPRQSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&";
+            String randomPassword = "";
+
+            for(int i=0; i < passwordLength; i++)
+            {
+                int randomNum = character.Next(0, allCharacters.Length);
+                randomPassword += allCharacters[randomNum];
+            }
+            passwordLabel.Text = randomPassword;
+        }
+
         public FormPasswordGenerator()
         {
             InitializeComponent();
             PasswordLengthSlider.Minimum = 5;
             PasswordLengthSlider.Maximum = 20;
+            PassordGenerator(5);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -41,6 +55,7 @@ namespace PasswordGenerator
         {
             PasswordLengthLabel.Text = "Password Length: " + PasswordLengthSlider.Value.ToString();
             currentPasswordLength = PasswordLengthSlider.Value;
+            PassordGenerator(currentPasswordLength);
         }
 
         private void PasswordLengthLabel_Click(object sender, EventArgs e)
